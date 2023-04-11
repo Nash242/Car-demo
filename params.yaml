@@ -1,0 +1,30 @@
+base:
+  project: car_price-project
+  random_state: 42
+  target_col: Selling_Price
+
+data_source:
+  s3_source: data_given/cardata.csv
+
+load_data:
+  raw_dataset_csv: data/raw/cardata.csv
+
+split_data:
+  train_path: data/processed/cardata.csv
+  test_path: data/processed/cardata.csv
+
+models:
+  - name: model1
+    estimator:
+      model_type: Linear Regression
+  - name: model2
+    estimator:
+      model_type: RandomForestRegressor
+  - name: model3
+    estimator:
+      model_type: GradientBoostingRegressor
+  - name: model3
+    estimator:
+      model_type: XGBRegressor
+
+model_dir: saved_models
