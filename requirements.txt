@@ -1,0 +1,7 @@
+dvc
+dvc[gdrive]
+pandas
+numpy
+matplotlib
+seaborn
+sklearn
