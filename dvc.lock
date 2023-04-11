@@ -7,8 +7,8 @@ stages:
       md5: 94d08bd3cf46e3266ad41d935780a5bb
       size: 17209
     - path: src/get_data.py
-      md5: 246a8ecf64e172a8e2b0aabd891104d2
-      size: 689
+      md5: 881f329b0b4c7130807e7295abd3ebaf
+      size: 696
     - path: src/load_data.py
       md5: efbf5a8c67485eda7de0d5c0acb5234a
       size: 583
@@ -16,3 +16,19 @@ stages:
     - path: data/raw/cardata.csv
       md5: 0958686e6b93759b272d6f2a84639c25
       size: 17275
+  clean_data:
+    cmd: python src/clean_data.py --config=params.yaml
+    deps:
+    - path: data/raw/cardata.csv
+      md5: 0958686e6b93759b272d6f2a84639c25
+      size: 17275
+    - path: src/get_data.py
+      md5: 881f329b0b4c7130807e7295abd3ebaf
+      size: 696
+    - path: src/load_data.py
+      md5: efbf5a8c67485eda7de0d5c0acb5234a
+      size: 583
+    outs:
+    - path: data/clean/cardata.csv
+      md5: ea2e90389eb7abbbd06742eee10ee3aa
+      size: 8945

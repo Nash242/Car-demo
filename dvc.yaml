@@ -7,3 +7,13 @@ stages:
     - data_given/cardata.csv
     outs:
     - data/raw/cardata.csv
+
+  clean_data:
+    cmd: python src/clean_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - src/load_data.py
+    - data/raw/cardata.csv
+    outs:
+    - data/clean/cardata.csv
+    
