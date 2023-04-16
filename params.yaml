@@ -13,8 +13,8 @@ clean_data:
   clean_dataset_csv: data/clean/cardata.csv
 
 split_data:
-  train_path: data/processed/cardata.csv
-  test_path: data/processed/cardata.csv
+  train_path: data/processed/train_cardata.csv
+  test_path: data/processed/test_cardata.csv
   test_size: 0.3
 
 models:

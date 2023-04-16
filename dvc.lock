@@ -32,3 +32,19 @@ stages:
     - path: data/clean/cardata.csv
       md5: ea2e90389eb7abbbd06742eee10ee3aa
       size: 8945
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/clean/cardata.csv
+      md5: ea2e90389eb7abbbd06742eee10ee3aa
+      size: 8945
+    - path: src/split_data.py
+      md5: 4f73365f6908fc6d099c47769c9c5666
+      size: 1008
+    outs:
+    - path: data/processed/test_cardata.csv
+      md5: 890cd890426adbf4a3a8174b4762a362
+      size: 2772
+    - path: data/processed/train_cardata.csv
+      md5: 863c9ad8ef10fbd13720ba25f0474baa
+      size: 6259
