@@ -48,3 +48,22 @@ stages:
     - path: data/processed/train_cardata.csv
       md5: 863c9ad8ef10fbd13720ba25f0474baa
       size: 6259
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_cardata.csv
+      md5: 890cd890426adbf4a3a8174b4762a362
+      size: 2772
+    - path: data/processed/train_cardata.csv
+      md5: 863c9ad8ef10fbd13720ba25f0474baa
+      size: 6259
+    - path: src/train_and_evaluate.py
+      md5: c65b03786428f5c6671176ecec6c5dc6
+      size: 2182
+    outs:
+    - path: report/scores.json
+      md5: 74a6b30215fec93f4db77ba97fa137a9
+      size: 99
+    - path: saved_models/model.joblib
+      md5: bb3d1efc9ede35f2a8e61ca60e4fb2cc
+      size: 245624
