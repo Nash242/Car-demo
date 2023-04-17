@@ -39,7 +39,7 @@ def train_and_evaluate(config_path):
 
     xg = XGBRegressor(random_state=random_state)
     xg.fit(train_x, train_y)
-
+    # print(train_x.columns,test_x.columns)
     predicted_price = xg.predict(test_x)
 
     (rmse, mae, r2) = eval_metrics(test_y, predicted_price)

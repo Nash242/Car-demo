@@ -4,18 +4,20 @@ base:
   target_col: Selling_Price
 
 data_source:
-  s3_source: data_given\cardata.csv
+  s3_source: data_given/cardata.csv
 
 load_data:
-  raw_dataset_csv: data\raw\cardata.csv
+  raw_dataset_csv: data/raw/cardata.csv
 
 clean_data:
-  clean_dataset_csv: data\clean\cardata.csv
+  clean_dataset_csv: data/clean/cardata.csv
 
 split_data:
-  train_path: data\processed\train_cardata.csv
-  test_path: data\processed\test_cardata.csv
+  train_path: data/processed/train_cardata.csv
+  test_path: data/processed/test_cardata.csv
   test_size: 0.3
+
+
 
 models:
 
@@ -25,6 +27,6 @@ models:
 model_dir: saved_models
 
 reports:
-  scores: report\scores.json
+  scores: report/scores.json
 
-webapp_model_dir: prediction_services\model\model.joblib
+webapp_model_dir: prediction_service/model/model.joblib

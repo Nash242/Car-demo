@@ -11,7 +11,9 @@ sklearn
 scikit-learn
 xgboost
 joblib
+pytest
+tox
 flake8
-importlib-metadata==4.13.0
+importlib-metadata  #==4.13.0
 flask
 
